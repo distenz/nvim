@@ -1,4 +1,11 @@
+-- Here is a more advanced example where we pass configuration
+-- options to `gitsigns.nvim`. This is equivalent to the following Lua:
+--    require('gitsigns').setup({ ... })
+--
+-- See `:help gitsigns` to understand what the configuration keys do
+
 -- Adds git related signs to the gutter, as well as utilities for managing changes
+-- https://github.com/lewis6991/gitsigns.nvim
 -- NOTE: gitsigns is already included in init.lua but contains only the base
 -- config. This will add also the recommended keymaps.
 
@@ -6,6 +13,20 @@ return {
   {
     'lewis6991/gitsigns.nvim',
     opts = {
+      auto_attach = true,
+      attach_to_untracked = true,
+      signs_staged_enable = true,
+      signs = {
+        add = { text = '+' },
+        change = { text = '~' },
+        delete = { text = '_' },
+        topdelete = { text = '‾' },
+        changedelete = { text = '~' },
+        untracked = { text = '┆' },
+      },
+      watch_gitdir = {
+        follow_files = true,
+      },
       on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
 
