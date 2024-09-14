@@ -19,7 +19,7 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- [[ Custom Keymaps ]]
 
 -- open netrw
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
+vim.keymap.set('n', '<leader>p', vim.cmd.Ex, { desc = 'Netrw Ex[P]lorer' })
 
 -- move selected lines
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
