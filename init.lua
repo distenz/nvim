@@ -230,12 +230,19 @@ require('lazy').setup({
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
+      auto_attach = true,
+      attach_to_untracked = true,
+      signs_staged_enable = true,
       signs = {
         add = { text = '+' },
         change = { text = '~' },
         delete = { text = '_' },
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
+        untracked = { text = '┆' },
+      },
+      watch_gitdir = {
+        follow_files = true,
       },
     },
   },
